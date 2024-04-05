@@ -1,5 +1,11 @@
-#include "mbed.h"
+#include "mbed.h" // Definiciones de las clases utiles. En este caso particular nos interesa DigitalIn y DigitalOut 
 #include "arm_book_lib.h"
+
+/**
+Viendo la definicion de la clase DigitalIn se observa:
+    - Tiene un atributo protegido llamado gpio que es el tipo gpio_t
+    - Los metodos son en su mayoria publicos, por lo que se pueden usar.
+**/
 
 int main()
 {
@@ -14,8 +20,14 @@ int main()
    while (true) {
       
       if ( gasDetector || overTempDetector ) {
+         printf("%s\n", "Se acciono el switch correspondiente a gasDetector O overTempDetector");
+         printf("%s\n", " ");
+         printf("%s\n", "Se enciende alarmLed");
          alarmLed = ON;
       } else {
+         printf("%s\n", "Nada accionado");
+         printf("%s\n", " ");
+         printf("%s\n", "No se enciende alarmLed");
          alarmLed = OFF;
       }
    }
