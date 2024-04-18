@@ -22,13 +22,15 @@ int main()
       if ( gasDetector || overTempDetector ) {
          printf("%s\n", "Se acciono el switch correspondiente a gasDetector O overTempDetector");
          printf("%s\n", " ");
-         printf("%s\n", "Se enciende alarmLed");
+         printf("gasDetector: %d\n", gasDetector.read());
+         printf("%s\n", " ");
          alarmLed = ON;
+         printf("alarmLed: %d\n", alarmLed.read());
       } else {
          printf("%s\n", "Nada accionado");
          printf("%s\n", " ");
-         printf("%s\n", "No se enciende alarmLed");
          alarmLed = OFF;
+         printf("alarmLed: %d\n", alarmLed.read());
       }
    }
 }
