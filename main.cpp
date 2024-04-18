@@ -29,6 +29,7 @@ int main()
       } else {
          printf("%s\n", "Nada accionado");
          printf("%s\n", " ");
+         printf("gasDetector: %d\n", gasDetector.read());
          alarmLed = OFF;
          printf("alarmLed: %d\n", alarmLed.read());
       }
